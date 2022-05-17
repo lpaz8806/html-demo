@@ -1,30 +1,32 @@
+let score = 0;
+const scoreViewer = document.getElementById('score-viewer');
 const scenario = document.getElementsByTagName('main')[0];
 const player = createPlayer();
+
 const monsters = new Set([
-    createMonster(10, 10),
-    createMonster(60, 10),
-    createMonster(110, 10),
-    createMonster(160, 10)
+    createMonster({ x: 10, y: 10, points: 50 }),
+    createMonster({ x: 60, y: 10, points: 80 }),
+    createMonster({ x: 110, y: 10, points: 40 }),
+    createMonster({ x: 160, y: 10, points: 40 })
 ]);
 
+scoreViewer.innerHTML = `Score: ${score}`;
 scenario.appendChild(player);
 
 for (const monster of monsters) {
     scenario.appendChild(monster);
 }
 
-// console.log(scenario.getBoundingClientRect());
-
 document.addEventListener('keydown', e => {
     const dx = 10;
     const currentLeft = player.offsetLeft;
 
     if (e.key === 'ArrowRight') {
-        const newLeft = currentLeft + dx;
+        const newLeft = Math.min(window.innerWidth - player.offsetWidth, currentLeft + dx);
         player.style.left = `${newLeft}px`;
     }
     else if (e.key === 'ArrowLeft') {
-        const newLeft = currentLeft - dx;
+        const newLeft = Math.max(0, currentLeft - dx);
         player.style.left = `${newLeft}px`;
     }
     
@@ -39,6 +41,10 @@ document.addEventListener('keydown', e => {
     // console.log('key down', e);
 });
 
+function increaseScore(points) {
+    score += points;
+    scoreViewer.innerHTML = `Score: ${score}`;
+}
 
 setInterval(()=> {
     const bullets = document.getElementsByClassName('bullet');
@@ -53,6 +59,9 @@ setInterval(()=> {
             monsters.delete(hitMonster);
             scenario.removeChild(hitMonster);
             scenario.removeChild(bullet);
+            
+            const points = parseInt(hitMonster.getAttribute('data-points'));
+            increaseScore(points);
             continue;
         }
 

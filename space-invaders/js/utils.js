@@ -4,11 +4,12 @@ function createPlayer() {
     return player;
 }
 
-function createMonster(x, y) {
+function createMonster(args) {
     const monster = document.createElement('div');
     monster.classList.add('monster');
-    monster.style.left = `${x}px`;
-    monster.style.top = `${y}px`;
+    monster.style.left = `${args.x}px`;
+    monster.style.top = `${args.y}px`;
+    monster.setAttribute('data-points', args.points);
     return monster;
 }
 

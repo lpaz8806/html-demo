@@ -4,10 +4,28 @@
 
 body {
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.topbar {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: #000;
 }
 main {
     position: relative;
-    overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 50px);
+    overflow: hidden;
+    background-color: #000;
+}
+
+#score-viewer {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: red;
+    font-size: 24px;
+    z-index: 999;
 }
