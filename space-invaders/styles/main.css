@@ -1,0 +1,12 @@
+@import url('player.css');
+@import url('monsters.css');
+
+body {
+    overflow: hidden;
+}
+main {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
