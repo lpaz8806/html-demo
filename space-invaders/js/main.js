@@ -44,7 +44,7 @@ setInterval(()=> {
     const bullets = document.getElementsByClassName('bullet');
     
     for (const bullet of bullets) {
-        const bulletNewTop = bullet.offsetTop - 2;
+        const bulletNewTop = bullet.offsetTop - 5;
         bullet.style.top = `${bulletNewTop}px`;
 
         const hitMonster = findCollision(monsters, bullet);

@@ -2,5 +2,7 @@
     position: absolute;
     height: 40px;
     width: 40px;
-    background-color: red;
+    background-image: url('../assets/monster.png');
+    background-position: center;
+    background-size: cover;
 }
