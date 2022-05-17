@@ -1,5 +1,6 @@
 @import url('player.css');
 @import url('monsters.css');
+@import url('bullets.css');
 
 body {
     overflow: hidden;
