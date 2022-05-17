@@ -1,0 +1,76 @@
+@import url('../../gallery/styles.css');
+@import url('todo_list.css');
+
+body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.container > .top-bar {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: red;
+    padding: 10px;
+}
+
+.container > .top-bar > .logo {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.container > .content {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.container > .content > nav {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #CCC;
+}
+
+.container > .content > nav > a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    transition: background-color 400ms ease;
+}
+.container > .content > nav > a:hover,
+.container > .content > nav > a.active {
+    background-color: #FFF;
+}
+
+.container > .content > main {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+main {
+    width: 100%;
+}
+main > section:not(.active) {
+    display: none;
+}
+
+.gallery > .item {
+    background-color: #EEE;
+}
+
+.gallery > .item:hover {
+    background-color: #CCC;
+    cursor: pointer;
+}

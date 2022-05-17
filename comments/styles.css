@@ -1,0 +1,63 @@
+.comments {
+    border: 1px solid #CCC;
+    height: 500px;
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+}
+.comments > .header {
+    background-color: #CCC;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.comments > .content {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.messages {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.messages > .message {
+    display: flex;
+    gap: 10px;
+}
+.messages > .message > .img-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #CCC;
+}
+.messages > .message > .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.messages > .message > .content > .sender {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+
+}
+.messages > .message > .content > .text {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.comments > .footer {
+    background-color: #CCC;
+    padding: 10px;
+
+    display: flex;
+    gap: 5px;
+}
+
+.comments > .footer > input {
+    flex-grow: 1;
+    border: none;
+}

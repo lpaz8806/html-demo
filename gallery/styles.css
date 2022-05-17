@@ -1,0 +1,23 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery > .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    height: 200px;
+    background-color: deeppink;
+
+    transition: transform 200ms ease-in-out;
+}
+
+.gallery > .item:hover {
+    background-color: yellow;
+    transform: scale(1.05);
+}
